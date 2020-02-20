@@ -1,5 +1,5 @@
 import React , {Component} from 'react';
-import logo from './logo.svg';
+
 import './App.css';
 
 class App extends Component {
@@ -8,18 +8,38 @@ class App extends Component {
     super();
 
     this.state = {
-      string: 'Hello Andrew'
+      monsters: [
+        {name: "Drakula",
+          id: 1
+      },
+        { name: "Zombie" ,
+          id: 2
+      },
+        { name: "Putin",
+          id: 3
+      },
+        { name: "Stalin",
+          id: 4
+      }
+      ]
     }
   }
 
 
   render() {
    return (
-     <div>
-        <p>{this.state.string}</p>
-        <p>{this.state.string}</p>
-        <button onClick={()=> this.setState({string: 'Huylo'})}  >change text</button>
-     </div>
+    
+    <div className="App">
+
+    {  this.state.monsters.map(monster =>  
+
+    <h1 key={monster.id}>
+      { monster.name }
+    </h1>
+      
+    )  }
+
+    </div>  
     
    )
   }
